@@ -1,0 +1,14 @@
+/home/tahbje/Documents/math-game/math-game/bin/Debug/net8.0/math-game
+/home/tahbje/Documents/math-game/math-game/bin/Debug/net8.0/math-game.deps.json
+/home/tahbje/Documents/math-game/math-game/bin/Debug/net8.0/math-game.runtimeconfig.json
+/home/tahbje/Documents/math-game/math-game/bin/Debug/net8.0/math-game.dll
+/home/tahbje/Documents/math-game/math-game/bin/Debug/net8.0/math-game.pdb
+/home/tahbje/Documents/math-game/math-game/obj/Debug/net8.0/math-game.GeneratedMSBuildEditorConfig.editorconfig
+/home/tahbje/Documents/math-game/math-game/obj/Debug/net8.0/math-game.AssemblyInfoInputs.cache
+/home/tahbje/Documents/math-game/math-game/obj/Debug/net8.0/math-game.AssemblyInfo.cs
+/home/tahbje/Documents/math-game/math-game/obj/Debug/net8.0/math-game.csproj.CoreCompileInputs.cache
+/home/tahbje/Documents/math-game/math-game/obj/Debug/net8.0/math-game.dll
+/home/tahbje/Documents/math-game/math-game/obj/Debug/net8.0/refint/math-game.dll
+/home/tahbje/Documents/math-game/math-game/obj/Debug/net8.0/math-game.pdb
+/home/tahbje/Documents/math-game/math-game/obj/Debug/net8.0/math-game.genruntimeconfig.cache
+/home/tahbje/Documents/math-game/math-game/obj/Debug/net8.0/ref/math-game.dll
