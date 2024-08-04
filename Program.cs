@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 class Program
 {
-    // Define gameHistory as a class-level field
     private static List<int> gameHistory = new List<int>();
 
     static void Main()
@@ -17,32 +17,50 @@ class Program
         while (game)
         {
             
-            Console.WriteLine("Menu");
-            Console.WriteLine("0. History\n 1. Add \n 2. Division");
+            Console.WriteLine("\t---- Menu ----\n");
+            Console.WriteLine(" \t0. History\n \t1. Add \n \t2. Division\n \t3. Multiply\n \t4. Division\n \t5. Exit\n");
+            Console.WriteLine("\t--------------");
 
             string option = Console.ReadLine();
 
-            if (option == "0")
+            try 
             {
-                // Display the history
-                foreach (int i in gameHistory)
-                {
-                  Console.WriteLine(i);
-
-                } 
+                int convertOptionInt = Int32.Parse(option);
+                game = RunGame(convertOptionInt, game);
             }
-            else if (option == "6")
+            catch(Exception) 
             {
-                game = false;
-            }
-            else
-            {
-                HandleGame(option);
+                Console.WriteLine("Error");
             }
         }
     }
 
-    static void HandleGame(string option)
+static bool RunGame(int convertOptionInt, bool game) {
+            if (convertOptionInt == 0)
+            {
+                Console.WriteLine("\t--------------\n");
+                Console.WriteLine("\tGame History:");
+                foreach (int i in gameHistory)
+                {
+                  Console.WriteLine($"\t {i} ");
+
+                } 
+                Console.WriteLine("\t--------------\n");
+            }
+            else if (convertOptionInt == 5)
+            {
+               return game == false;
+            }
+            else if (convertOptionInt < 0 ||  convertOptionInt > 5) {
+                Console.WriteLine("Not a valid input, try another number!");
+            }
+            else
+            {
+                HandleGame(convertOptionInt);
+            }
+                return true;
+            }
+    static void HandleGame(int convertOptionInt)
     {
         Console.WriteLine("First number:");
         string inputOne = Console.ReadLine();
@@ -52,18 +70,18 @@ class Program
         int numberOne = int.Parse(inputOne);
         int numberTwo = int.Parse(inputTwo);
 
-        switch (option)
+        switch (convertOptionInt)
         {
-            case "1":
+            case 1:
                 AddNumbers(numberOne, numberTwo);
                 break;
-            case "2":
+            case 2:
                 SubtractNumbers(numberOne, numberTwo);
                 break;
-            case "3":
+            case 3:
                 MultiplyNumbers(numberOne, numberTwo);
                 break;
-            case "4":
+            case 4:
                 DivideNumbers(numberOne, numberTwo);
                 break;
             default:
@@ -75,29 +93,35 @@ class Program
     static void AddNumbers(int a, int b)
     {
         int result = a + b;
-        Console.WriteLine($"\ta + b is equal to {result}");
+    Console.WriteLine($"\t{a} plus {b} is equal to {result}\t\n");
         gameHistory.Add(result);
     }
 
     static void SubtractNumbers(int a, int b)
     {
-        Console.WriteLine($"a - b is equal to {a - b}");
+        int result = a - b;
+    Console.WriteLine($"\t{a} minus {b} is equal to {result}\t\n");
+        gameHistory.Add(result);
     }
 
     static void MultiplyNumbers(int a, int b)
     {
-        Console.WriteLine($"a * b is equal to {a * b}");
+        int result = a * b;
+    Console.WriteLine($"\t{a} multiplied by {b} is equal to {result}\t\n");
+        gameHistory.Add(result);
     }
 
     static void DivideNumbers(int a, int b)
     {
         if (b != 0)
         {
-            Console.WriteLine($"a / b is equal to {a / b}");
+            int result = a / b;
+        Console.WriteLine($"\t{a} divided by {b} is equal to {result}\t\n");
+            gameHistory.Add(result);
         }
         else
         {
-            Console.WriteLine("Cannot divide by zero.");
+            Console.WriteLine("\tCannot divide by zero.\n");
         }
     }
-}
+};
